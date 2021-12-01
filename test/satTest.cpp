@@ -189,7 +189,6 @@ kami_graph gen_testcase (int num = -1, int num_color = -1, int num_e = -1) {
       vector<int> tmp;
       adjnodes.push_back(tmp);
    }
-   cout << num << " " << num_color << " " << num_e << "\n";
    for (size_t i=0; i<num_e; i++) {
       ran1 = (num + 1)* ((double) rand() / (RAND_MAX + 1) + 1);
       ran2 = (num + 1)* ((double) rand() / (RAND_MAX + 1) + 1);
@@ -250,7 +249,6 @@ kami_graph gen_testcase (int num = -1, int num_color = -1, int num_e = -1) {
    vector<int> record;
    ran = (max_steps - 5)* ((double) rand() / (RAND_MAX + 1) + 1) + 5;
    int num_steps = ran;
-   cout << "step: " << ran << "\n";
    for (size_t i=0; i<ran; ++i) {
       ran1 = (num-1)* ((double) rand() / (RAND_MAX + 1) + 1);
       ran2 = (num_color-1)* ((double) rand() / (RAND_MAX + 1) + 1);
@@ -276,7 +274,7 @@ int main()
    SatSolver solver;
    solver.initialize();
    int a, b, c;
-   cout << "type 1.num of nodes 2.num of color 3.num of edges\n";
+   cout << "Type num of nodes | num of color | num of edges\n";
    cin >> a >> b >> c;
    kami_graph kami = gen_testcase(a, b, c);
    
@@ -371,8 +369,6 @@ int main()
    
 
    while (now_step < steps) {
-
-      cout << now_step;
 
       // STEP 2 only one change  Cn1 : clicked color   Cn2 : changed color 
       // num of clauses : num*color*2*3 = 6*num*color
